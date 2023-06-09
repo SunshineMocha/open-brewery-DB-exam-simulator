@@ -1,0 +1,62 @@
+<!-- <div *ngFor="let brewerie of breweries">
+  <h1>{{brewerie.name}}</h1>
+  <div>
+    {{brewerie.country}}
+    {{brewerie.state}}
+    {{brewerie.postal_code}}
+    {{brewerie.city}}
+    {{brewerie.street}}
+    {{brewerie.phone}}
+    {{brewerie.website_url}}
+  </div>
+</div> -->
+
+<!-- ANGULAR MATERIAL CARDS -->
+
+<!-- <mat-card *ngFor="let brewerie of breweries" class="card-container">
+  <mat-card-content>
+    <mat-card-title>{{brewerie.name}}</mat-card-title>
+    <div class="info-container">
+      <mat-card-subtitle>{{brewerie.city}}</mat-card-subtitle>
+      <mat-card-subtitle>{{brewerie.street}}</mat-card-subtitle>
+      <mat-card-subtitle>{{brewerie.state}}</mat-card-subtitle>
+      <mat-card-subtitle>{{brewerie.postal_code}}</mat-card-subtitle>
+      <mat-card-subtitle>{{brewerie.country}}</mat-card-subtitle>
+    </div>
+    <div class="contact-info">
+      <mat-card-subtitle>{{brewerie.phone}}</mat-card-subtitle>
+      <mat-card-subtitle>{{brewerie.website_url}}</mat-card-subtitle>
+      <a href="{{brewerie.website_url}}>LINK</a>
+    </div>
+  </mat-card-content>
+</mat-card> -->
+
+<!-- MAT GRID W/ CARDS  -->
+<mat-grid-list cols="5" rowHeight="250px"> <!-- rowHeight="1.5:1" -->
+  <mat-grid-tile *ngFor="let brewerie of breweries">
+    <mat-card class="card-container">
+        <mat-card-content>
+          <mat-card-title>{{brewerie.name}}</mat-card-title>
+          <div class="info-container">
+            <mat-card-subtitle>{{brewerie.name}}</mat-card-subtitle>
+            <mat-card-subtitle>{{brewerie.city}}</mat-card-subtitle>
+            <mat-card-subtitle>{{brewerie.street}}</mat-card-subtitle>
+            <mat-card-subtitle>{{brewerie.state}}</mat-card-subtitle>
+            <mat-card-subtitle>{{brewerie.postal_code}}</mat-card-subtitle>
+            <mat-card-subtitle>{{brewerie.country}}</mat-card-subtitle>
+          </div>
+          <div class="contact-info">
+            <!-- <mat-card-subtitle>{{brewerie.phone}}</mat-card-subtitle> -->
+            <!-- <mat-card-subtitle>{{brewerie.website_url}}</mat-card-subtitle>
+            <mat-card-subtitle>{{brewerie.website_url}}</mat-card-subtitle> -->
+            <mat-card-actions>
+              <a mat-raised-button href="{{brewerie.website_url}}" target="_blank">PHONE</a>
+            </mat-card-actions>
+            <mat-card-actions align="end">
+              <a mat-raised-button href="{{brewerie.website_url}}" target="_blank">LINK</a>
+            </mat-card-actions>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
